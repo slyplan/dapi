@@ -13,4 +13,8 @@ class ApplicationController < ActionController::API
       head 406 and return
     end
   end
+
+  def render_error(resource, status)
+    render json: resource, status: status, adapter: :json_api, serializer: ActiveModel::Serializer::ErrorSerializer
+  end
 end
