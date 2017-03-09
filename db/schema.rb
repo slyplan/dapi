@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309115943) do
+ActiveRecord::Schema.define(version: 20170309225431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20170309115943) do
   end
 
   create_table "metrics", force: :cascade do |t|
-    t.string   "metric_name"
-    t.string   "value"
-    t.decimal  "lat"
-    t.decimal  "lon"
-    t.datetime "timestamp"
-    t.integer  "driver_id"
+    t.string  "metric_name"
+    t.string  "value"
+    t.decimal "lat"
+    t.decimal "lon"
+    t.integer "driver_id"
+    t.integer "timestamp"
   end
 
 end
