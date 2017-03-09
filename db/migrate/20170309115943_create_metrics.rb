@@ -3,8 +3,8 @@ class CreateMetrics < ActiveRecord::Migration[5.0]
     create_table :metrics do |t|
       t.string :metric_name
       t.string :value
-      t.decimal :lat, :precision => 18, :scale => 15
-      t.decimal :lon, :precision => 18, :scale => 15
+      t.decimal :lat
+      t.decimal :lon
       t.timestamp :timestamp
       t.integer :driver_id
     end

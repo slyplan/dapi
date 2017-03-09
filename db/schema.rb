@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20170309115943) do
   create_table "metrics", force: :cascade do |t|
     t.string   "metric_name"
     t.string   "value"
-    t.decimal  "lat",         precision: 18, scale: 15
-    t.decimal  "lon",         precision: 18, scale: 15
+    t.decimal  "lat"
+    t.decimal  "lon"
     t.datetime "timestamp"
     t.integer  "driver_id"
   end
