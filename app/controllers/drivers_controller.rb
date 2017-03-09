@@ -9,7 +9,7 @@ class DriversController < ApplicationController
     if driver.save
       render json: driver, status: 201
     else
-      head 400
+      render_error(driver, 400)
     end
   end
 
@@ -18,7 +18,7 @@ class DriversController < ApplicationController
     if driver.update_attributes(@json_params)
       render json: driver, status: 200
     else
-      head 400
+      render_error(driver, 400)
     end
   end
 
