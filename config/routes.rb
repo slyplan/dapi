@@ -3,4 +3,5 @@ Rails.application.routes.draw do
     resources :metrics
   end
   resources :metrics
+  root to: 'welcome#main'
 end
