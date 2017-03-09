@@ -7,8 +7,12 @@ raise 'Could not seed, table metrics is not empty' if Metric.first
 json_file = File.open(seed_json_file, 'r') do |f|
   f.each_line do |line|
     next if line.chop.empty?
-    obj = JSON.parse(line)
-    Metric.create(obj)
+    json_obj = JSON.parse(line)
+    object = Metric.new(json_obj)
+    unless object.save
+      puts object.errors.messages
+      return
+    end
   end
 end
 

@@ -8,7 +8,11 @@ json_string = File.read(seed_json_file)
 json = JSON.parse(json_string)
 
 json.each do |driver|
-  Driver.create(driver)
+  object = Driver.new(driver)
+  unless object.save
+    puts object.errors.messages
+    return
+  end
 end
 
 puts 'Drivers seeded successfully'
