@@ -12,4 +12,10 @@ class DriversController < ApplicationController
       head 400
     end
   end
+
+  def destroy
+    driver = Driver.find(params[:id])
+    driver.destroy
+    head 204
+  end
 end
