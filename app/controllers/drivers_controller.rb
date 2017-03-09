@@ -13,6 +13,15 @@ class DriversController < ApplicationController
     end
   end
 
+  def update
+    driver = Driver.find(params[:id])
+    if driver.update_attributes(@json_params)
+      render json: driver, status: 200
+    else
+      head 400
+    end
+  end
+
   def destroy
     driver = Driver.find(params[:id])
     driver.destroy
