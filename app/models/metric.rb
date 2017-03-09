@@ -1,5 +1,5 @@
 class Metric < ApplicationRecord
-  belongs_to :driver, optional: true
+  belongs_to :driver
   self.per_page = 50
 
   # FIXME: Remove next line if business would like to save garbage metrics
