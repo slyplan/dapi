@@ -48,4 +48,13 @@ class DriversControllerTest < ActionController::TestCase
     assert_equal post_driver['data']['attributes']['name'], jdata['data']['attributes']['name']
     assert_equal post_driver['data']['attributes']['license-number'], jdata['data']['attributes']['license-number']
   end
+
+  test 'Should not create invald driver' do
+    post_driver = { 'data'=>{'type'=>'drivers', 'attributes'=>{}}}
+    @request.headers["Content-Type"] = 'application/vnd.api+json'
+    post :create, body: post_driver.to_json
+    assert_response 400
+    jdata = JSON.parse response.body
+    assert_equal jdata['errors'].count, 2
+  end
 end
