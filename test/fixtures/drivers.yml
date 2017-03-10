@@ -1,0 +1,5 @@
+<% 3.times do |i| %>
+driver_<%= i %>:
+  name: <%= "Driver Nr#{i}" %>
+  license_number: <%= rand(99) %>-<%= rand(999) %>-<%= rand(99) %>
+<% end %>
