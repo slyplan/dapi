@@ -24,26 +24,9 @@ It will create the database and load driver and metrics which stored at https://
 
 ## CRUD
 
-### Get driver
-
+Run command to see all avalable routes
 ```
-driver_metrics GET    /drivers/:driver_id/metrics(.:format)     metrics#index
-               POST   /drivers/:driver_id/metrics(.:format)     metrics#create
- driver_metric GET    /drivers/:driver_id/metrics/:id(.:format) metrics#show
-               PATCH  /drivers/:driver_id/metrics/:id(.:format) metrics#update
-               PUT    /drivers/:driver_id/metrics/:id(.:format) metrics#update
-               DELETE /drivers/:driver_id/metrics/:id(.:format) metrics#destroy
-       drivers POST   /drivers(.:format)                        drivers#create
-        driver GET    /drivers/:id(.:format)                    drivers#show
-               PATCH  /drivers/:id(.:format)                    drivers#update
-               PUT    /drivers/:id(.:format)                    drivers#update
-               DELETE /drivers/:id(.:format)                    drivers#destroy
-       metrics GET    /metrics(.:format)                        metrics#index
-               POST   /metrics(.:format)                        metrics#create
-        metric GET    /metrics/:id(.:format)                    metrics#show
-               PATCH  /metrics/:id(.:format)                    metrics#update
-               PUT    /metrics/:id(.:format)                    metrics#update
-               DELETE /metrics/:id(.:format)                    metrics#destroy
+rake routes
 ```
 
 ## Testing
