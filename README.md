@@ -1,24 +1,42 @@
-# README
+# Gett challenge app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About the application
 
-Things you may want to cover:
+To build API used http://jsonapi.org/ specification
+Data models stored at `app/models`
 
-* Ruby version
+## Setting up
 
-* System dependencies
+Clone repository
 
-* Configuration
+```
+git clone https://github.com/slyplan/dapi.git
+```
 
-* Database creation
+Change `config/database.yml` and run the command, it will create the database and load driver and metrics which stored at https://github.com/gtforge/CodeChallenge
+```
+rake db:setup
+```
 
-* Database initialization
+![Metrics without specifyed driver will be discarded]
 
-* How to run the test suite
+## CRUD
 
-* Services (job queues, cache servers, search engines, etc.)
+### Get driver
 
-* Deployment instructions
+```
+GET /drivers/1
+```
 
-* ...
+## Testing
+
+Exec command to run tests
+
+```
+rake test
+```
+
+## Try it
+
+https://secure-ocean-19453.herokuapp.com
+
