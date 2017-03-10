@@ -2,6 +2,14 @@ require 'test_helper'
 require 'json'
 
 class DriversControllerTest < ActionController::TestCase
+  test 'Should delete drivers and its metrics' do
+    dcount = Driver.count - 1
+    mcount = Metric.count - 99
+    delete :destroy, params: { id: drivers('driver_0').id }
+    assert_response 204
+    assert_equal dcount, Driver.count
+    assert_equal mcount, Metric.count
+  end
 
   test 'Should get driver' do
     driver = drivers('driver_1')
